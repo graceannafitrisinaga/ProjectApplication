@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    tools:context=".MainActivity">
+
+    <!-- Membuat judul tampilan awal activity.
+     lebar dan tinggi layout diberi atribut wrap content sebagai penyesuaian tinggi dan lebar  tampilan teks dengan isi konten.
+     jarak atas widget dengan parent adalah 60dp, teks "Catholic_Visitor" yang digunakan dalam widget ini disimpan dalam variabel string textJudul
+     teks diberi warna hitam dengan mendefinisikan terlebih dahulu warna black dalam file colors.xml
+     teks diberi ukuran 45sp dan diberi style bold agar tulisan menjadi tebal
+     -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/textJudul"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Menggunakan widget ImageView untuk menambahkan gambar dengan mengcopy terlebih dahulu gambar dan mempaste kan nya kedalam folder drawable, mengatur lebar gambar 290dp dan tinggi gambar 206dp,
+    mengatur jarak sisi kanan widget image dengan parent sebesar 62dp, mengatur jarak bagian atas widget image dengan widget textJudul sebesar 44dp
+    mengatur jarak sisi kiri widget image dengan parent sebesar 63dp, diberikan deskripsi konten gambar untuk menampilkan teks yang berada dalam variabel
+    string gambarGereja jika gambar tidak tampil ketika running aplikasi-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="290dp"
+        android:layout_height="206dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="63dp"
+        android:contentDescription="@string/gambarGereja"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/pict3" />
+
+    <!-- Membuat label username menggunakan widget textview.
+     lebar dan tinggi label diberi atribut wrap content. jarak atas widget dengan image adalah 36dp, teks "USERNAME" yang digunakan dalam widget ini disimpan dalam variabel string textUsername
+     teks dalam label ini diberi warna putih dengan mendefinisikan terlebih dahulu warna white dalam file colors.xml. teks diberi ukuran 20sp -->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/textUsername"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="TextContrastCheck" />
+
+    <!-- Membuat form/inputan user untuk label Username menggunakan widget <EditText>.
+     lebar form ini diatur sebesar 329dp dan tinggi form 44dp. mengatur jarak sisi kanan widget dengan parent sebesar 40dp,
+     jarak atas widget dengan widget TextView adalah 8dp. kode android:hint: Untuk memberitahu user, apa yang harus di inputkan (placeholder).
+     kode android:inputType: Untuk menentukan jenis text input yang digunakan. Dalam perintah android:text tidak ditambahkan teks karena nantinya akan menampung inputan user untuk label Username dalam device android.
+     diberi warna hitam untuk teks inputan user menggunakan color black pada file colors.xml.
+     -->
+    <EditText
+        android:id="@+id/editTextusername"
+        android:layout_width="329dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:hint="Enter Username"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <!-- Membuat label password menggunakan widget textview.
+     lebar dan tinggi label diberi atribut wrap content. jarak sisi kanan widget dengan parent sebesar 40dp. jarak atas widget dengan widget EditText adalah 12dp,
+     teks "PASSWORD" yang digunakan dalam widget ini disimpan dalam variabel string textPassword
+     teks dalam label ini diberi warna putih menggunakan color white yang ada dalam file colors.xml. teks diberi ukuran 20sp -->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/textPassword"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextusername"
+        tools:ignore="TextContrastCheck" />
+
+    <!-- Membuat form/inputan user untuk label Password menggunakan widget <EditText>.
+     lebar form ini diatur sebesar 329dp dan tinggi form 44dp. mengatur jarak sisi kanan widget dengan parent sebesar 40dp,
+     jarak atas widget dengan widget TextView adalah 8dp. diberikan kode android:hint: Untuk memberitahu user bahwa password yang harus di inputkan (placeholder).
+     jenis text input yang digunakan berupa password agar saat user menginputkan password tidak terlihat atau disimbolkan dengan titik.
+     Dalam perintah android:text tidak ditambahkan teks karena akan menampung inputan user untuk label Password.
+     diberi warna hitam untuk password inputan user menggunakan color black pada file colors.xml.
+     -->
+    <EditText
+        android:id="@+id/editTextpassword"
+        android:layout_width="329dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="Password"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <!-- Membuat button Login menggunakan widget <Button> dengan id btnLogin untuk masuk ke activity home
+     Button berada pada bagian tengah bawah device android dengan lebar button 330dp dan tinggi button 60dp
+     jarak atas button dengan widget EditText adalah 24dp. diberikan warna abu-abu pada background button menggunakan color grey yang ada pada file colors.xml
+     Button yang dibuat diberi nama 'LOGIN' yang disimpan dalam variabel string textLogin dan diberi ukuran teks sebesar 30sp-->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/grey"
+        android:text="@string/textLogin"
+        android:textSize="30sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextpassword" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

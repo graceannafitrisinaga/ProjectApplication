@@ -1,0 +1,272 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- AppBar ini digunakan untuk membungkus menu action / toolbar yang digunakan pada aplikasi ini. AppBar berada di bagian atas aplikasi Android
+    lebar dan tinggi layout appbar ini menggunakan atribut wrap content serta diberi id id/appbar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <!-- Widget Toolbar disini menggunakan ?attr/actionBarSize sebagai tinggi layout agar sesuai dengan ukuran tinggi action bar
+         lebar layout toolbar ini menggunakan atribut match parent agar lebar tampilan aplikasi sama dengan lebar layar smartphone
+         diberi warna background oldpink yang ada dalam file colors.xml agar background toolbar berwarna oldpin
+         dan juga diberi atribut scroll|enterAlways agar saat tampilan di scroll pada smartphone, toolbar ini tidak ikut terscroll atau tidak hilang-->
+        <androidx.appcompat.widget.Toolbar
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:background="@color/oldpink"
+            app:layout_scrollFlags="scroll|enterAlways"></androidx.appcompat.widget.Toolbar>
+
+        <!-- membuat tab layout pada AppBar dengan id id/tabs, lebar tablayout ini menggunakan atribut match parent agar lebar tab sesuai dengan tinggi lebar android
+         tinggi tablayout menggunakan atribut wrap content agar lebar tab sesuai dengan teks yang diinput, dan diberi atribut scroll|enterAlways pada scrollFlags layout nya -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"
+
+            app:tabMode="scrollable">
+
+            <!-- membuat item tab pertama pada tab layout yang diberi nama tab About, lebar dan tinggi layout tab
+             menggunakan atribut wrap content
+             teks "About" yang digunakan dalam tab ini disimpan dalam variabel string textAbout-->
+            <com.google.android.material.tabs.TabItem
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/textAbout" />
+
+            <!-- membuat item tab kedua pada tab layout yang diberi nama tab Reward, lebar dan tinggi layout tab
+             menggunakan atribut wrap content
+             teks "Reward" yang digunakan dalam tab ini disimpan dalam variabel string textReward-->
+            <com.google.android.material.tabs.TabItem
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/textReward" />
+
+            <!-- membuat item tab ketiga pada tab layout yang diberi nama tab Asking, lebar dan tinggi layout tab
+             menggunakan atribut wrap content
+             teks "Asking" yang digunakan dalam tab ini disimpan dalam variabel string textAsking-->
+            <com.google.android.material.tabs.TabItem
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/textAsking" />
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- widget NestedScrollView ini compatible dengan CoordinatorLayout
+    sehingga jika menggunakan AppBarLayout pada menu design, widget ini akan otomatis ada setelah kode program widget AppBarLayout
+    widget ini menggunakan id id/nestedScrollView dengan lebar dan tinggi layout menggunakan atribut match parent
+    diberi warna background pink yang berada dalam file colors.xml
+    -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:background="@color/pink"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <!-- Dalam widget NestedScrollView ditambahkan widget ConstraintLayout untuk menyusun tampilan widget TextViem dan ImageView kompleks yang digunakan aplikasi ini
+        widget ini menggunakan lebar layout atribut match parent dan tinggi layout atribut wrap content
+        -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Membuat judul tampilan PROFILE activity.
+            lebar dan tinggi layout menggunakan atribut wrap content.
+            jarak atas widget dengan parent adalah 15dp, background widget textview ini diberi warna brokengrey yang terdapat dalam file colors.xml
+            teks "Developer Profile" yang digunakan dalam widget ini disimpan dalam variabel string judulProfile
+            teks diberi warna hitam menggunakan warna black dalam file colors.xml
+            teks diberi ukuran 45sp dan style bold agar teks tebal-->
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/brokengrey"
+                android:text="@string/judulProfile"
+                android:textColor="@color/black"
+                android:textSize="45sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Menggunakan widget ImageView untuk menambahkan gambar profil yang ada dalam folder drawable, mengatur lebar dan tinggi gambar 200dp,
+            mengatur jarak bagian atas widget image dengan widget textview id/textView16 sebesar 20dp
+            -->
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                app:srcCompat="@drawable/profil" />
+
+            <!-- Membuat label nama menggunakan widget textview.
+            lebar layout 290dp dan tinggi layout 30dp. jarak sisi kiri dan kanan widget dengan parent 16dp, jarak atas widget dengan imageview id/imageView4 adalah 20dp,
+            teks "Nama : Grace Anna Fitri Sinaga" yang digunakan dalam widget ini disimpan dalam variabel string textNama
+            teks dalam label ini diberi warna hitam menggunakan warna black dalam file colors.xml. teks diberi ukuran 20sp
+            dan menggunakan style bold agar teks tebal-->
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="290dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/textNama"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.62"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <!-- Membuat label nim menggunakan widget textview.
+            lebar layout 290dp dan tinggi layout 30dp. jarak atas widget dengan textview id/textView17 adalah 10dp,
+            jarak sisi kiri dan kanan widget dengan parent 16dp
+            teks "NIM : 203110028" yang digunakan dalam widget ini disimpan dalam variabel string textNim
+            teks dalam label ini diberi warna hitam menggunakan warna black dalam file colors.xml. teks diberi ukuran 20sp
+            dan menggunakan style bold agar teks tebal-->
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="290dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/textNim"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.619"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <!-- Membuat label Status menggunakan widget textview.
+            lebar layout 290dp dan tinggi layout 30dp. jarak atas widget dengan textview id/textView18 adalah 10dp,
+            jarak sisi kiri dan kanan widget dengan parent 16dp, teks "Status : Mahasiswi" yang digunakan dalam widget ini disimpan dalam variabel string textStatus
+            teks dalam label ini diberi warna hitam menggunakan warna black dalam file colors.xml. teks diberi ukuran 25sp dan menggunakan style bold agar teks tebal -->
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="290dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/textStatus"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.619"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+            <!-- Membuat label Jurusan menggunakan widget textview.
+            lebar layout 290dp dan tinggi layout 30dp. jarak atas widget dengan textview id/textView19 adalah 10dp,
+            jarak sisi kiri dan kanan widget dengan parent 16dp, teks "Jurusan : RPLA" yang digunakan dalam widget ini disimpan dalam variabel string textJurusan
+            teks dalam label ini diberi warna hitam menggunakan warna black dalam file colors.xml dan teks diberi ukuran 20sp serta menggunakan style bold agar teks tebal-->
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="290dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/textJurusan"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.619"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+            <!-- Membuat label Jenjang menggunakan widget textview.
+            lebar layout 290dp dan tinggi layout 30dp. jarak atas widget dengan textview id/textView20 adalah 10dp,
+            jarak sisi kiri dan kanan widget dengan parent 16dp, teks "Jenjang : D3" yang digunakan dalam widget ini disimpan dalam variabel string textJenjang
+            teks dalam label ini diberi warna hitam menggunakan warna black dalam file colors.xml dan teks diberi ukuran 20sp serta menggunakan style bold agar teks tebal -->
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="290dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="Jenjang : D3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.619"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+            <!-- Menggunakan widget ImageView untuk menambahkan gambar logo yang ada dalam folder drawable, mengatur lebar dan tinggi gambar 100dp,
+            mengatur jarak bagian atas widget image dengan widget textview id/textView21 sebesar 20dp,
+            dan mengatur jarak sisi kanan widget image dengan parent sebesar 16dp
+            -->
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21"
+                app:srcCompat="@drawable/logo" />
+
+            <!-- Membuat button Back menggunakan widget <Button> dengan id btnBack untuk kembali ke activity home
+            Button berada pada sisi kiri bawah device android dengan lebar dan tinggi button menggunakan atribut wrap content
+            mengatur jarak atas widget dengan widget id/imageView6 5dp dan jarak sisi kiri widget dengan parent 16dp
+            Button yang dibuat diberi nama 'BACK' yang disimpan dalam variabel string back
+            diberikan warna abu-abu pada background button menggunakan color grey yang ada pada file colors.xml-->
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/back"
+                android:backgroundTint="@color/grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="MissingConstraints" />
+
+            <!-- Membuat button Back menggunakan widget <Button> dengan id btnBack untuk kembali ke activity home
+            Button berada pada sisi kiri bawah device android dengan lebar dan tinggi button menggunakan atribut wrap content
+            mengatur jarak atas widget dengan widget id/imageView6 5dp dan jarak sisi kiri widget dengan parent 180dp
+            Button yang dibuat diberi nama 'LINKEDIN' yang disimpan dalam variabel string linkedin
+            diberikan warna abu-abu pada background button menggunakan color grey yang ada pada file colors.xml-->
+            <Button
+                android:id="@+id/btnLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/linkedin"
+                android:backgroundTint="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/btnBack"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

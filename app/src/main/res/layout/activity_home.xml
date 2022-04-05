@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    tools:context=".HomeActivity">
+
+    <!-- Menggunakan widget ImageView untuk menambahkan gambar dengan nama akun yang ada dalam folder drawable, mengatur lebar gambar 40dp dan tinggi gambar 40dp,
+    mengatur jarak bagian atas widget image dengan parent sebesar 4dp
+    diberikan deskripsi konten gambar untuk menampilkan teks yang berada dalam variabel string textTodo jika gambar tidak tampil ketika running aplikasi-->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/textTodo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/akun"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
+    <!-- Menggunakan widget ImageView untuk menambahkan gambar dengan nama home yang ada dalam folder drawable, mengatur lebar gambar 40dp dan tinggi gambar 40dp,
+    mengatur jarak sisi kanan widget image dengan parent sebesar 4dp dan mengatur jarak bagian atas widget image dengan parent sebesar 4dp
+    diberikan deskripsi konten gambar untuk menampilkan teks yang berada dalam variabel string imageSatu jika gambar tidak tampil ketika running aplikasi-->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/imageSatu"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
+    <!-- Membuat teks beranda yang berada disisi kanan widget image home pada activity.
+     lebar dan tinggi layout diberi atribut wrap content. jarak atas widget dengan parent adalah 20dp,
+     teks "Beranda" yang digunakan dalam widget ini disimpan dalam variabel string textberanda
+     teks diberi warna biru dengan mendefinisikan terlebih dahulu warna blue dalam file colors.xml
+     teks diberi ukuran 18sp -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/textBeranda"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Membuat judul tampilan activity.
+     lebar dan tinggi layout diberi atribut wrap content. jarak atas widget dengan widget id/textView adalah 16dp,
+     teks "GEREJA KATOLIK di DIY" yang digunakan dalam widget ini disimpan dalam variabel string textEnam pada file strings.xml
+     teks diberi warna hitam menggunakan warna black dalam file colors.xml
+     teks diberi ukuran 35sp dan diberi style bold agar tulisan menjadi tebal. widget ini diberi warna background brokengrey menggunakan
+     color brokengrey yang telah didefinisikan dalam file colors.xml-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/textEnam"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:background="@color/brokengrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <!-- Membuat isi bagian tampilan activity sisi kiri (label gereja kumetiran).
+     lebar layout 203dp dan tinggi layout 49dp. mengatur jarak sisi kiri widget dengan parent sebesar 8 dp dan jarak atas widget dengan widget textView id/textView3 adalah 25dp,
+     teks "Gereja Santa Maria Tak Bercela Kumetiran" yang digunakan dalam widget ini disimpan dalam variabel string textTiga pada file strings.xml
+     rata teks diatur menggunakan alignment center agar teks berada di tengah widget. teks diberi ukuran 20sp.
+     background widget ini diberi warna teal_700 yang ada dalam file colors.xml dan teks didalamnya diberi warna putih menggunakan warna white dalam file colors.xml
+     -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="203dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/textTiga"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:background="@color/teal_700"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <!-- Menggunakan widget ImageView untuk menambahkan gambar dengan nama church6 yang ada dalam folder drawable, mengatur lebar gambar 200dp dan tinggi gambar 140dp,
+    mengatur jarak sisi kiri widget image dengan parent sebesar 8dp dan mengatur jarak bagian atas widget image dengan textview id/textView4 sebesar 8dp
+    diberikan deskripsi konten gambar untuk menampilkan teks yang berada dalam variabel string gerejakumetiran jika gambar tidak tampil ketika running aplikasi-->
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="200dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/church6"
+        android:contentDescription="@string/gerejakumetiran" />
+
+    <!-- Membuat label alamat gereja kumetiran.
+     lebar layout 200dp dan tinggi layout 72dp. mengatur jarak sisi kiri widget dengan parent sebesar 8 dp dan jarak atas widget dengan imageView id/imageView9 adalah 5dp,
+     teks alamat gereja yang digunakan dalam widget ini disimpan dalam variabel string textDua pada file strings.xml
+     teks didalamnya diberi warna hitam menggunakan warna black dalam file colors.xml dan background widget ini diberi warna white yang ada dalam file colors.xml
+     -->
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="200dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/textDua"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <!-- Membuat isi bagian tampilan activity sisi kanan (label gereja pakem).
+     lebar layout 180dp dan tinggi layout 49dp. mengatur jarak atas widget dengan widget textView id/textView3 adalah 25dp dan jarak sisi kanan widget dengan parent sebesar 8 dp,
+     teks "Gereja St. maria Assumpta Pakem" yang digunakan dalam widget ini disimpan dalam variabel string textSatu pada file strings.xml
+     rata teks diatur menggunakan alignment center agar teks berada di tengah widget. teks diberi ukuran 20sp.
+     teks dalam widget ini diberi warna putih menggunakan warna white dalam file colors.xml dan background widget ini diberi warna teal_700 yang ada dalam file colors.xml
+     -->
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="180dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/textSatu"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <!-- Menggunakan widget ImageView untuk menambahkan gambar dengan nama church2 yang ada dalam folder drawable, mengatur lebar gambar 181dp dan tinggi gambar 136dp,
+    mengatur jarak bagian atas widget image dengan textview id/textView9 sebesar 8dp
+    diberikan deskripsi konten gambar untuk menampilkan teks yang berada dalam variabel string gereja_kaliurang jika gambar tidak tampil ketika running aplikasi-->
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="181dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/gereja_kaliurang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:srcCompat="@drawable/church2"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck,ImageContrastCheck" />
+
+    <!-- Membuat label alamat gereja pakem.
+     lebar layout 187dp dan tinggi layout 72dp. mengatur jarak atas widget dengan imageView id/imageView5 adalah 8dp dan jarak sisi kanan widget dengan parent sebesar 8 dp,
+     teks alamat gereja yang digunakan dalam widget ini disimpan dalam variabel string textEmpat pada file strings.xml
+     teks didalamnya diberi warna hitam menggunakan warna black dalam file colors.xml dan background widget ini diberi warna white yang ada dalam file colors.xml
+     -->
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="187dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/textEmpat"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <!-- Membuat isi bagian tampilan activity sisi kiri (label gereja ganjuran).
+     lebar layout 197dp dan tinggi layout 50dp. mengatur jarak sisi kanan widget dengan parent sebesar 8 dp dan jarak atas widget dengan widget textView id/textView8 adalah 15dp,
+     teks "Gereja Hati Kudus Ganjuran" yang digunakan dalam widget ini disimpan dalam variabel string textTujuh pada file strings.xml
+     teks dalam widget diberi warna putih menggunakan warna white dalam file colors.xml dan background widget ini diberi warna teal_700 yang ada dalam file colors.xml
+     rata teks diatur menggunakan alignment center agar teks berada di tengah widget. teks diberi ukuran 20sp.
+     -->
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="197dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/textTujuh"
+        android:textColor="@color/white"
+        android:background="@color/teal_700"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <!-- Menggunakan widget ImageView untuk menambahkan gambar dengan nama church3 yang ada dalam folder drawable, mengatur lebar gambar 188dp dan tinggi gambar 147dp,
+    mengatur jarak sisi kiri widget image dengan parent sebesar 8dp dan mengatur jarak bagian atas widget image dengan textview id/textView12 sebesar 4dp
+    diberikan deskripsi konten gambar untuk menampilkan teks yang berada dalam variabel string gereja_ganjuran jika gambar tidak tampil ketika running aplikasi-->
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="188dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:srcCompat="@drawable/church3"
+        android:contentDescription="@string/gereja_ganjuran" />
+
+    <!-- Membuat label alamat gereja ganjuran.
+     lebar layout 195dp dan tinggi layout 68dp. mengatur jarak sisi kiri widget dengan parent sebesar 8 dp dan jarak atas widget dengan imageView id/imageView7 adalah 4dp,
+     teks alamat gereja yang digunakan dalam widget ini disimpan dalam variabel string textDelapan pada file strings.xml
+     teks didalamnya diberi warna hitam menggunakan warna black dalam file colors.xml dan background widget ini diberi warna white yang ada dalam file colors.xml
+     -->
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="195dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/textDelapan"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <!-- Membuat isi bagian tampilan activity sisi kanan (label gereja sedayu).
+     lebar layout 185dp dan tinggi layout 50dp. mengatur jarak atas widget dengan widget textView id/textView10 adalah 15dp dan jarak sisi kanan widget dengan parent sebesar 8 dp,
+     teks "Gereja St. Theresia Sedayu" yang digunakan dalam widget ini disimpan dalam variabel string textSembilan pada file strings.xml
+     teks dalam widget ini diberi warna putih menggunakan warna white dalam file colors.xml dan background widget ini diberi warna teal_700 yang ada dalam file colors.xml
+     rata teks diatur menggunakan alignment center agar teks berada di tengah widget. teks diberi ukuran 20sp.
+     -->
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="185dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/textSembilan"
+        android:textColor="@color/white"
+        android:background="@color/teal_700"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.806"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <!-- Menggunakan widget ImageView untuk menambahkan gambar dengan nama church4 yang ada dalam folder drawable, mengatur lebar gambar 188dp dan tinggi gambar 150dp,
+    mengatur jarak bagian atas widget image dengan textview id/textView14 sebesar 7dp dan jarak sisi kanan widget dengan parent sebesar 8dp
+    diberikan deskripsi konten gambar untuk menampilkan teks yang berada dalam variabel string gereja_sedayu jika gambar tidak tampil ketika running aplikasi-->
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="188dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/gereja_sedayu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:srcCompat="@drawable/church4" />
+
+    <!-- Membuat label alamat gereja sedayu.
+     lebar layout 192dp dan tinggi layout 66dp. mengatur jarak atas widget dengan imageView id/imageView8 adalah 0dp dan jarak sisi kanan widget dengan parent sebesar 8 dp,
+     teks alamat gereja yang digunakan dalam widget ini disimpan dalam variabel string textLima pada file strings.xml
+     teks didalamnya diberi warna hitam menggunakan warna black dalam file colors.xml dan background widget ini diberi warna white yang ada dalam file colors.xml
+     -->
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="192dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/textLima"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <!-- Membuat button Profile menggunakan widget <Button> dengan id btnProfile untuk masuk ke activity profile
+     Button berada pada sisi kiri bawah device android dengan lebar button 196dp dan tinggi button 47dp
+     jarak sisi kiri button dengan parent adalah 4dp.
+     Button yang dibuat diberi nama 'PROFILE' yang disimpan dalam variabel string textBtnProf
+     diberikan warna abu-abu pada background button menggunakan color grey yang ada pada file colors.xml-->
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="196dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/textBtnProf"
+        android:backgroundTint="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <!-- Membuat button Logout menggunakan widget <Button> dengan id btnLogout untuk kembali ke activity main atau keluar dari activity home.
+     Button berada pada sisi kanan bawah device android dengan lebar button 196dp dan tinggi button 47dp
+     jarak sisi kanan button dengan parent adalah 4dp.
+     Button yang dibuat diberi nama 'LOGOUT' yang disimpan dalam variabel string textLogout
+     diberikan warna abu-abu pada background button menggunakan color grey yang ada pada file colors.xml-->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="196dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/textLogout"
+        android:backgroundTint="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnProfile"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

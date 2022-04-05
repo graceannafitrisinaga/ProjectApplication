@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    tools:context=".HomeActivity">
+
+    <!-- File ini digunakan untuk mengatur tampilan halaman activity home landcape atau menggunakan orientasi constraint layout landscape.
+     Oleh karena itu lebar dan tinggi layout id/imageView3 ini diubah menjadi 35dp
+     jarak sisi kiri dan kanan id/imageView3 dengan parent diubah menjadi 16dp dan jarak atas id/imageView3 dengan parent adalah 4dp
+     -->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/textTodo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/akun"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
+    <!-- ukuran imageview diubah sehingga memiliki lebar 34dp dan tinggi 26dp
+     jarak sisi kiri id/imageView2 dengan parent diubah menjadi 4dp dan jarak sisi atas id/imageView2 dengan parent menjadi 4dp
+    -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="34dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/imageSatu"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
+    <!-- ukuran label beranda diubah dengan jarak sisi atas id/textView dengan parent menjadi 12dp
+    dan ukuran teks menjadi 10sp-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/textBeranda"
+        android:textColor="@color/blue"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ukuran judul tampilan activity ini diubah dengan menempatkan teks judul ditengah layar landscape
+     jarak sisi atas widget id/textView3 dengan widget id/textView diubah menjadi 10dp
+     dan ukuran teks diubah menjadi 25sp-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/brokengrey"
+        android:text="@string/textEnam"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <!-- ukuran label gereja kumetiran ini diubah dengan lebar label 196dp dan tinggi label 37dp
+    jarak sisi kiri widget id/textView4 dengan parent diubah menjadi 100dp dan jarak atas widget id/textView4 dengan widget id/textView3 diubah menjadi 10dp
+    -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="196dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_700"
+        android:text="@string/textTiga"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <!-- ukuran widget id/imageView9 (gambar gereja kumetiran) diubah sehingga memiliki lebar 100dp dan tinggi 50dp
+     jarak sisi kiri id/imageView9 dengan parent diubah menjadi 150dp dan jarak sisi atas id/imageView9 dengan id/textView4 menjadi 5dp
+    -->
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/gerejakumetiran"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/church6" />
+
+    <!-- ukuran label alamat gereja kumetiran ini diubah dengan lebar label 195dp dan tinggi label 38dp
+    jarak sisi kiri widget id/textView8 dengan parent diubah menjadi 100dp dan jarak atas widget id/textView8 dengan widget id/imageView9 diubah menjadi 5dp
+    -->
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="195dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:text="@string/textDua"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <!-- ukuran label gereja pakem ini diubah dengan lebar label 196dp dan tinggi label 37dp
+    jarak sisi kanan widget id/textView9 dengan parent diubah menjadi 8dp dan jarak atas widget id/textView9 dengan widget id/textView3 diubah menjadi 10dp
+    -->
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="196dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/teal_700"
+        android:text="@string/textSatu"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <!-- ukuran widget id/imageView5 (gambar gereja pakem) diubah sehingga memiliki lebar 100dp dan tinggi 50dp
+     jarak sisi atas id/imageView5 dengan id/textView9 menjadi 5dp
+    -->
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/gereja_kaliurang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:srcCompat="@drawable/church2"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck,ImageContrastCheck" />
+
+    <!-- ukuran label alamat gereja pakem ini diubah dengan lebar label 195dp dan tinggi label 38dp
+    jarak sisi kanan widget id/textView10 dengan parent diubah menjadi 8dp dan jarak atas widget id/textView10 dengan widget id/imageView5 diubah menjadi 5dp
+    -->
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="195dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:text="@string/textEmpat"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.665"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <!-- ukuran label gereja ganjuran ini diubah dengan lebar label 196dp dan tinggi label 30dp
+    jarak sisi kiri widget id/textView12 dengan parent diubah menjadi 100dp dan jarak atas widget id/textView12 dengan widget id/textView8 diubah menjadi 10dp
+    -->
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="196dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_700"
+        android:text="@string/textTujuh"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <!-- ukuran widget id/imageView7 (gambar gereja ganjuran) diubah sehingga memiliki lebar 100dp dan tinggi 50dp
+     jarak sisi kiri id/imageView7 dengan parent diubah menjadi 150dp dan jarak sisi atas id/imageView7 dengan id/textView12 menjadi 5dp
+    -->
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/gereja_ganjuran"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:srcCompat="@drawable/church3" />
+
+    <!-- ukuran label alamat gereja ganjuran ini diubah dengan lebar label 195dp dan tinggi label 38dp
+    jarak sisi kiri widget id/textView13 dengan parent diubah menjadi 100dp dan jarak atas widget id/textView12 dengan widget id/imageView7 diubah menjadi 4dp
+    -->
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="195dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:text="@string/textDelapan"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <!-- ukuran label gereja sedayu ini diubah dengan lebar label 196dp dan tinggi label 30dp
+    jarak sisi kanan widget id/textView14 dengan parent diubah menjadi 8dp dan jarak atas widget id/textView14 dengan widget id/textView10 diubah menjadi 10dp
+    -->
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="196dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/teal_700"
+        android:text="@string/textSembilan"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <!-- ukuran widget id/imageView8 (gambar gereja sedayu) diubah sehingga memiliki lebar 100dp dan tinggi 50dp
+     jarak sisi atas id/imageView8 dengan id/textView14 menjadi 4dp dan jarak sisi kanan widget id/imageView8 dengan parent diubah menjadi 8dp
+    -->
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/gereja_sedayu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:srcCompat="@drawable/church4" />
+
+    <!-- ukuran label alamat gereja sedayu ini diubah dengan lebar label 195dp dan tinggi label 38dp
+    jarak sisi kanan widget id/textView15 dengan parent diubah menjadi 8dp dan jarak atas widget id/textView15 dengan widget id/imageView8 diubah menjadi 5dp
+    -->
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="195dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:text="@string/textLima"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.674"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <!-- ukuran button back juga ikut diubah, dimana lebar layout button menjadi 196dp, dan tinggi layout button menjadi 40dp
+     jarak sisi kiri id/btnPofile dengan parent menjadi 100dp-->
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="196dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="100dp"
+        android:backgroundTint="@color/grey"
+        android:text="@string/textBtnProf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <!-- ukuran button linkedin juga ikut diubah, dimana lebar layout button menjadi 196dp, dan tinggi layout button menjadi 40dp
+     jarak sisi kanan id/btnLink dengan parent menjadi 4dp-->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="196dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@color/grey"
+        android:text="@string/textLogout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/btnProfile"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintVertical_bias="0.054"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

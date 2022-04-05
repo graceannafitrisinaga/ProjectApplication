@@ -1,0 +1,233 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Dalam file landscape ini, lebar AppBarlayout menggunakan atribut wrap content
+     dan tinggi AppBarLayout menggunakan match parent sehingga layout appbar ini akan mengikuti ukuran tampilan aplikasi landscape
+    -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <!-- Dalam file AppBarLayout ini, tinggi Toolbar menggunakan atribut ?attr/actionBarSize
+        dan lebar Toolbar menggunakan match parent sehingga layout toolbar ini berada di tampilan paling atas dan akan mengikuti ukuran tampilan aplikasi landscape
+        -->
+        <androidx.appcompat.widget.Toolbar
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:background="@color/oldpink"
+            app:layout_scrollFlags="scroll|enterAlways"></androidx.appcompat.widget.Toolbar>
+
+        <!-- Pada TabLayout tidak ada perubahan karena lebar layout tab menggunakan atribut match parent dan tinggi layout tab menggunakan atribut wrap content
+         sehingga tab layout akan menyesuaikan dengan tampilan aplikasi android-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"
+
+            app:tabMode="scrollable">
+
+            <!-- item tab pada tablayout ini juga tidak dilakukan perubahan karena tinggi dan lebar layout nya
+             menyesuaikan dengan tampilan landscape aplikasi di android dan teks yang berada dalam item tab ini-->
+            <com.google.android.material.tabs.TabItem
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="About" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="REWARD" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="asking" />
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Dalam file landscape ini, lebar dan tinggi widget NestedScrollView tetap menggunakan atribut match parent
+    sehingga widget NestedScrollView ini akan mengikuti ukuran tampilan aplikasi landscape
+    -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:background="@color/pink"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <!-- pada widget ConstraintLayout juga tidak dilakukan perubahan untuk tampilan aplikasi landscape
+         karena lebar dan tinggi layout menggunakan atribut match parent dan wrap content-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- File ini digunakan untuk mengatur tampilan halaman profil landcape atau menggunakan constraint layout landscape.
+            Oleh karena itu jarak atas widget dengan parent diubah menjadi 4dp sedangkan lebar dan tinggi layout tetap menggunakan atribut wrap content
+            ukuran teks diperkecil menjadi 20sp-->
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/brokengrey"
+                android:text="Developer Profile"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- ukuran imageview diubah sehingga memiliki lebar 75dp dan tinggi 50dp
+            jarak sisi atas image dengan id/textView2 diubah menjadi 5dp
+            -->
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                app:srcCompat="@drawable/profil" />
+
+            <!-- ukuran label nama diubah dengan lebar layout 230dp dan tinggi layout 20dp
+            jarak sisi atas id/textView17 dengan id/imageView4 diubah menjadi 5dp
+            dan ukuran teks diperkecil menjadi 15sp-->
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Nama : Grace Anna Fitri Sinaga"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <!-- ukuran label nim diubah dengan lebar layout 230dp dan tinggi layout 20dp
+            jarak sisi atas id/textView18 dengan id/textView17 diubah menjadi 3dp
+            dan ukuran teks diperkecil menjadi 15sp-->
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3dp"
+                android:text="NIM : 203110028"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <!-- ukuran label status diubah dengan lebar layout 230dp dan tinggi layout 20dp
+            jarak sisi atas id/textView19 dengan id/textView18 diubah menjadi 3dp
+            dan ukuran teks diperkecil menjadi 15sp-->
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3dp"
+                android:text="Status : Mahasiswi"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+            <!-- ukuran label jurusan diubah dengan lebar layout 230dp dan tinggi layout 20dp
+            jarak sisi atas id/textView20 dengan id/textView19 diubah menjadi 3dp
+            dan ukuran teks diperkecil menjadi 15sp-->
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3dp"
+                android:text="Jurusan : RPLA"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+            <!-- ukuran label jenjang diubah dengan lebar layout 230dp dan tinggi layout 20dp
+            jarak sisi atas id/textView21 dengan id/textView20 diubah menjadi 3dp
+            dan ukuran teks diperkecil menjadi 15sp-->
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3dp"
+                android:text="Jenjang : D3"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+            <!-- ukuran imageview6 diubah sehingga memiliki lebar 50dp dan tinggi 25dp
+            jarak sisi atas image dengan id/textView6 diubah menjadi 5dp
+            -->
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21"
+                app:srcCompat="@drawable/logo" />
+
+            <!-- ukuran button tidak diubah karena menggunakan atribut wrap content
+            jarak sisi kiri id/btnBack dengan parent menjadi 80dp, jarak sisi atas id/btnBack dengan id/imageView6 menjadi 2dp-->
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="2dp"
+                android:backgroundTint="@color/grey"
+                android:text="Back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+            <!-- Pada button Linkedin, yang diubah adalah jarak sisi kiri id/btnLink dengan parent menjadi 55dp, jarak sisi atas id/btnLink dengan id/imageView6 menjadi 2dp-->
+            <Button
+                android:id="@+id/btnLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="2dp"
+                android:backgroundTint="@color/grey"
+                android:text="LINKEDIN"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.807"
+                app:layout_constraintStart_toEndOf="@+id/btnBack"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
